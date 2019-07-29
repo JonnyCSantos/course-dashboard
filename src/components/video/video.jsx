@@ -18,6 +18,4 @@ const mapStateToProps = store => ({
     newLeasson: store.activeReducer.newLeasson
 });
 
-
 export default connect(mapStateToProps)(Video);
-
