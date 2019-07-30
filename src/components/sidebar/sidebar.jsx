@@ -20,6 +20,12 @@ class Sidebar extends Component {
                         </li>
                     ))}
                 </ul>
+                <div>
+                    <a href="/add">Add Page</a>
+                </div>
+                <div>
+                    <a href="/data">Data Page</a>
+                </div>
             </div>
         )
     }
