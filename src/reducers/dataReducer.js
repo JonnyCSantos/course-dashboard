@@ -20,7 +20,7 @@ export const dataReducer = () => {
                     {id: 4, name: 'Second Leasson'},
                     {id: 5, name: 'Third Leasson'}
                 ]
-            },
+            }
         ]
     }
 };

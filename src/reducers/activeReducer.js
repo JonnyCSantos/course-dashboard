@@ -1,17 +1,14 @@
-const initialState = {
-    newModule: '',
-    newLeasson: ''
-  };
+import { dataReducer } from './dataReducer'
   
-  export const activeReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'CLICK_UPDATE_VALUE':
-        return {
-          ...state,
-          newModule: action.newModule,
-          newLeasson: action.newLeasson
-        };
-      default:
-        return state;
-    }
-  };
+export const activeReducer = (state = dataReducer, action) => {
+  switch (action.type) {
+    case 'CLICK_UPDATE_VALUE':
+      return {
+        ...state,
+        moduleActive: action.moduleActive,
+        leassonActive: action.leassonActive
+      };
+    default:
+      return state;
+  }
+};

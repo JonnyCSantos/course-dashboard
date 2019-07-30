@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { clickButton } from '../../actions/index';
+import { clickButtonAction } from '../../actions/clickButtonAction';
 
 class Sidebar extends Component {
     render() {
-        const { clickButton, module } = this.props;
+        const { clickButtonAction, module } = this.props;
         return (
             <div className="sidebar">
                 <ul className="sidebar__module">
@@ -14,7 +14,7 @@ class Sidebar extends Component {
                             <strong>{module.name}</strong>
                             <ul className="sidebar__leassons">
                                 {module.leassons.map((leasson) => (
-                                    <li className="sidebar__leasson-item" onClick={() => clickButton(module.name, leasson.name)} key={leasson.id}>{leasson.name}</li>
+                                    <li className="sidebar__leasson-item" onClick={() => clickButtonAction(module.name, leasson.name)} key={leasson.id}>{leasson.name}</li>
                                 ))}
                             </ul>
                         </li>
@@ -26,12 +26,12 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = store => ({
-    newModule: store.activeReducer.newModule,
-    newLeasson: store.activeReducer.newLeasson,
+    moduleActive: store.activeReducer.moduleActive,
+    leassonActive: store.activeReducer.leassonActive,
     module: store.dataReducer.module
 });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ clickButton }, dispatch);
+  bindActionCreators({ clickButtonAction }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

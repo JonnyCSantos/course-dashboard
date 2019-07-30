@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 
 class Video extends Component {
     render() {
-        const { newModule, newLeasson } = this.props;
-
+        const { moduleActive, leassonActive } = this.props;
+        console.log(moduleActive, leassonActive)
         return (
             <div className="video">
-                <strong>Módulo {newModule} - Leasson {newLeasson}</strong>
+                <strong>Módulo {moduleActive} - Leasson {leassonActive}</strong>
             </div>
         )
     }
 }
 
 const mapStateToProps = store => ({
-    newModule: store.activeReducer.newModule,
-    newLeasson: store.activeReducer.newLeasson
+    moduleActive: store.activeReducer.moduleActive,
+    leassonActive: store.activeReducer.leassonActive
 });
 
 export default connect(mapStateToProps)(Video);
