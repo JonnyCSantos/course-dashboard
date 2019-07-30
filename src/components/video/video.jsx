@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class Video extends Component {
     render() {
         const { moduleActive, leassonActive } = this.props;
-        console.log(moduleActive, leassonActive)
         return (
             <div className="video">
                 <strong>Módulo {moduleActive} - Leasson {leassonActive}</strong>
